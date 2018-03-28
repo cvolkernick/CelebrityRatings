@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,19 +7,26 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvHeader"
+        android:layout_toLeftOf="@+id/btnAddActivity"
         android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="Welcome to Celebrity Ratings!"
+        android:textSize="14sp" />
+
+    <Button
+        android:text="Add New Celebrity"
+        android:id="@+id/btnAddActivity"
+        android:layout_width="152dp"
         android:layout_height="wrap_content"
-        android:text="Welcome to Celebrity Ratings!" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="addCelebrity"/>
 
     <ListView
+        android:id="@+id/lvCelebrities"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </ScrollView>
-
-</LinearLayout>
+        android:layout_height="465dp"
+        android:layout_below="@+id/tvHeader" />
+</RelativeLayout>
