@@ -26,11 +26,7 @@ public class MainActivity extends AppCompatActivity {
         LocalDataSource dataSource = new LocalDataSource(this);
         List<Celebrity> celebrityList = dataSource.getAllCelebrity();
 
-        ArrayAdapter<Celebrity> adapter = new ArrayAdapter<Celebrity>(
-                this,
-                R.layout.list_item,
-                lvCelebrities.getId()
-        );
+        CelebrityAdapter adapter = new CelebrityAdapter(this, celebrityList);
 
         lvCelebrities.setAdapter(adapter);
     }
