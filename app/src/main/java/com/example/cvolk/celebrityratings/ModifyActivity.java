@@ -1,5 +1,6 @@
 package com.example.cvolk.celebrityratings;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,6 +47,9 @@ public class ModifyActivity extends AppCompatActivity {
                 dataSource.saveCelebrity(celebrity);
 
                 Toast.makeText(this, celebrity.getFirstName() + " " + celebrity.getLastName() + " Added", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
         }
     }
 }

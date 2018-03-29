@@ -24,9 +24,9 @@ public class CelebrityAdapter extends ArrayAdapter<Celebrity> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
 
-        TextView tvFirstName = convertView.findViewById(R.id.tvFirstName);
+        TextView tvCelebrity = convertView.findViewById(R.id.tvCelebrity);
 
-        tvFirstName.setText(celebrity.getFirstName().toString());
+        tvCelebrity.setText(celebrity.getFirstName().toString() + " " + celebrity.getLastName().toString() + " " + celebrity.getAge() + " / " + celebrity.getGender().toString());
 
         return convertView;
     }
