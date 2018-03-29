@@ -58,12 +58,6 @@ public class Celebrity {
 
     @Override
     public String toString() {
-        return "Celebrity{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", gender='" + gender + '\'' +
-                ", age=" + age + '\'' +
-                ", favorite='" + favorite +
-                '}';
+        return firstName + " " + lastName + " " + gender + " " + age;
     }
 }

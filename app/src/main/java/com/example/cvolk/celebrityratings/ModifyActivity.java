@@ -45,7 +45,7 @@ public class ModifyActivity extends AppCompatActivity {
 
                 dataSource.saveCelebrity(celebrity);
 
-                Toast.makeText(this, celebrity.toString() + " Added", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, celebrity.getFirstName() + " " + celebrity.getLastName() + " Added", Toast.LENGTH_SHORT).show();
         }
     }
 }
