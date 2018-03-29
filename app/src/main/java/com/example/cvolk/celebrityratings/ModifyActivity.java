@@ -24,6 +24,18 @@ public class ModifyActivity extends AppCompatActivity {
         bindViews();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if (getIntent().getStringExtra("firstName") != "") {
+            etFirstName.setText(getIntent().getStringExtra("firstName"));
+            etFirstName.setText(getIntent().getStringExtra("lastName"));
+            etFirstName.setText(getIntent().getStringExtra("gender"));
+            etFirstName.setText(getIntent().getStringExtra("age"));
+        }
+    }
+
     private void bindViews() {
         etFirstName = findViewById(R.id.etFirstName);
         etLastName = findViewById(R.id.etLastName);
@@ -50,6 +62,31 @@ public class ModifyActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+        }
+    }
+
+    public void deleteCelebrity(View view) {
+        LocalDataSource dataSource = new LocalDataSource(this);
+
+        switch (view.getId()) {
+            case R.id.btnDeleteCelebrity:
+                Celebrity celebrity = new Celebrity(
+                        etFirstName.getText().toString(),
+                        etLastName.getText().toString(),
+                        etGender.getText().toString(),
+                        Integer.parseInt(etAge.getText().toString()),
+                        false
+                );
+
+                int result = dataSource.deleteCelebrity(celebrity);
+
+                if (result == 1) {
+                    Toast.makeText(getApplicationContext(), "Deleted " + celebrity.toString(), Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
+                }
         }
     }
 }

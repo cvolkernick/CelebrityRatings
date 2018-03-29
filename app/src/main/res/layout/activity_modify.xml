@@ -32,6 +32,12 @@
         android:id="@+id/btnAddCelebrity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add New Celebrity"
+        android:text="Save Celebrity"
         android:onClick="addCelebrity"/>
+    <Button
+        android:id="@+id/btnDeleteCelebrity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Celebrity"
+        android:onClick="deleteCelebrity"/>
 </LinearLayout>

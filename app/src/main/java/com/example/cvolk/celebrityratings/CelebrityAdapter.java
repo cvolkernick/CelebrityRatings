@@ -25,8 +25,11 @@ public class CelebrityAdapter extends ArrayAdapter<Celebrity> {
         }
 
         TextView tvCelebrity = convertView.findViewById(R.id.tvCelebrity);
-
-        tvCelebrity.setText(celebrity.getFirstName().toString() + " " + celebrity.getLastName().toString() + " " + celebrity.getAge() + " / " + celebrity.getGender().toString());
+        tvCelebrity.setText(celebrity.getFirstName().toString() + " " +
+                celebrity.getLastName().toString() + " " +
+                celebrity.getGender().toString() + " / " +
+                celebrity.getAge()
+        );
 
         return convertView;
     }

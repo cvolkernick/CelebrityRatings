@@ -25,6 +25,17 @@ public class LocalDataSource extends SQLiteOpenHelper {
 
     }
 
+    public int deleteCelebrity(Celebrity celebrity) {
+        SQLiteDatabase database = getWritableDatabase();
+
+        return database.delete(LocalDataContract.Celebrity.TABLE,
+                LocalDataContract.Celebrity.FIRST_NAME + "=" + celebrity.getFirstName() + " AND " +
+                        LocalDataContract.Celebrity.LAST_NAME + "=" + celebrity.getLastName() + " AND " +  LocalDataContract.Celebrity.GENDER + "=" +
+                        celebrity.getGender() + " AND " + LocalDataContract.Celebrity.AGE + "=" + celebrity.getAge(),
+                null
+        );
+    }
+
     public long saveCelebrity(Celebrity celebrity) {
         SQLiteDatabase database = getWritableDatabase();
 
